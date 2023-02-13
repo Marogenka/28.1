@@ -35,7 +35,6 @@ class TestValidRegistration:
     def teardown(self):
         self.close()
 
-# eto_baza
     def test_eto_baza(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
             Valid_Data.valid_first_name)
@@ -50,7 +49,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.ID, Registration.ENTER_CODE)
 
-# 1
+        
     @allure.feature('Регистрация с паролем из 21 символа и более')
     def test_registration_user_with_pass_21char(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -66,7 +65,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 2
+
     @allure.feature('Регистрация по E-mail или номеру телефона (невалидные данные)')
     def test_registration_user_with_email_without_domain(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -82,7 +81,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 3
+
     @allure.feature('Регистрация по номеру телефона (имя 31 и более символов)')
     def test_registration_user_with_firstname_31char(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -98,7 +97,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 4
+
     @allure.feature('Регистрация по номеру телефона (имя 1 символ)')
     def test_registration_user_with_firstname_1char(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -114,7 +113,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 5
+
     @allure.feature('Регистрация по номеру телефона (пустое поле E-mail или номер телефона)')
     def test_registration_user_with_not_filled_email_or_mobile(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -128,7 +127,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 6
+
     @allure.feature('Регитрация по номеру телефона (пустое поле Фамилия)')
     def test_registration_user_with_not_filled_lastname(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -142,7 +141,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 7
+
     @allure.feature('Регистрация по номеру телефона (пустое поле Имя)')
     def test_registration_user_with_not_filled_firstname(self):
         self.driver.find_element(By.XPATH, Registration.LASTNAME).send_keys(
@@ -156,7 +155,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 8
+
     @allure.feature('Регистрация по номеру телефона (разные данные подверждающего пароля с паролем)')
     def test_registration_user_with_non_matching_passwords(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -172,7 +171,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 9
+
     @allure.feature('Регистрация по номеру телефона (невалидные данные пароля)')
     def test_registration_user_with_password_not_contain_digit(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
@@ -188,7 +187,7 @@ class TestValidRegistration:
         self.driver.find_element(By.XPATH, Registration.BUTTON_SUBMIT).click()
         assert self.driver.find_element(By.XPATH, RegistrationsAllerts.ALLERTS_ERROR)
 
-# 10
+
     @allure.feature('Регистрация по номеру телефона (Фамилия 31 и более символов)')
     def test_registration_user_with_lastname_31char(self):
         self.driver.find_element(By.XPATH, Registration.FIRSTNAME).send_keys(
